@@ -1,13 +1,18 @@
+console.log('app.js');
+
+var arr = [1, 2, 3];
+for(var i=0; i<arr.length; i++) {
+    console.log(arr[i]);
+}
+
 var todos = ['운동'];
 var todo = '코딩';
 todos.push(todo);
 console.log(todos);
 
-
 todos.forEach(function(todo){
         console.log(todo);
 });
-
 
 var updateTodo = '운동';
 var updateIndex = todos.findIndex(function(todo) {
@@ -45,21 +50,22 @@ var newTodo = todos.filter(function(todo) {
 });
 console.log(newTodo);
 
-
+// Value
 var a = 1;
 var b = a;
 b = 2;
-console.log(a, b); 
+console.log(a, b); // 1 2
 
-var a = [1];  /
+var a = [1];  
 var b = a;
 b[0] = [2];
 console.log(a, b); 
 
+// 참조 Reference
 var a = {x:1};
 var b = a;
 b.x = 2;
-console.log(a, b); 
+console.log(a, b); // {x: 2} {x: 2} 
 
 
 function byValue(count) {
@@ -67,15 +73,15 @@ function byValue(count) {
 }
 var count = 3;
 byValue(count);
-console.log(count); 
-
+console.log(count); // 3
 
 function byReference(count) {
 	count.push('2');
 }
 var count = ['1'];
 byReference(count);
-console.log(count);  
+console.log(count);  // ["1", "2"]
+
 
 var isMan = true;
 if(isMan) {
@@ -85,103 +91,64 @@ if(isMan) {
 }
 
 
-alert('안녕하세요'); 
+alert('안녕하세요');
+var who = prompt('당신은 누구세요');
+confirm('정말 삭제하시겠습니까?');
 
-var who = prompt('당신은 누구?');
-console.log(who);
-
-var isDelete = confirm('정말 삭제?'); 
-console.log(isDelete);
-
-
-var sum = 0;
-var num = prompt('더할 숫자를 입력해주세요');
-while(num !== null) {
-    sum+= parseInt(num);
-    num = prompt('더할 숫자를 입력해주세요');
+function test() {
+	console.log('test()');
 }
-alert('숫자의 총 합은: '+sum);
+
+var id = setTimeout(test, 1000); // 1초 후 1번 실행
+var id = setInterval(test, 1000); // 1초 마다 계속 실행
 
 
 function test() {
-    console.log('test()');
-} 
-
-var id = setTimeout(test, 1000);  
-var id = setInterval(test, 1000); 
-
-
-function test() {
-    console.log('test()');
-    setTimeout(test, 1000);
+	console.log('test()');
+	setTimeout(test, 1000);
 }
 
+
+var nick = 'aji';  // 전역변수
+
+function test() {
+	var age = 30;
+	console.log(nick, age);
+}
 test();
-clearTimeout(id);
-clearInterval(id);
+console.log(age); // age not defined!
 
 
 
 function sum(a, b) {
     return a+b;
 }
-console.log(sum(1, 2));
-
-function mult(a) {
-    console.log(a+'단 출력');
-    for(var j=1; j<10; j++) 
-        console.log(i+'x'+j+'='+(i*j));
-}
-
-for(var i=1; i<10; i++) {
-    mult(i);
-}
-
+console.log(sum(1,2));
 
 var car = {
-    year:'2014',
-    starting: function() {
-        console.log('starting ..'); 
-    },
+	year: '2014',
+	starting: function() {
+		console.log('starting..');
+	},
 };
+
 car.starting();
 
-var person = {
-    name:'Minju Kang',
-    birth: 20000312,
-    sayHi: function(a) {
-        console.log('Hi '+a+'~ Good to see you');
-    },
-}
-
-person.sayHi('Nick');
-
-
-var car = function() {
-    
-};
 
 
 (function() {
-    
-})();
+    var a = 'a';
+    console.log(a);
+})(); 
 
 
 function sum(x, y) {
-    if(!y) y=1;
+    if(!y) y = 1;
     console.log(x+y);
 }
+
 sum(3);
 
-function sum() {
-    var size = 0;
-    for(var i=0; i<arguments.length; i++) {
-        size += arguments[i]; 
-    }
-    console.log(size);
-}
-
-sum(1, 2, 3, 4, 5, 7);
 
 var text = 'abc def'; 
 var testReg = /abc/;  
@@ -193,7 +160,7 @@ var matchReg = /abc/;
 var result = text.match(matchReg);
 console.log(match); 
 
-var text = 'abc def';    
+var text = 'abc def';    /
 var replaceReg = /def/;  
-var result = text.replace(replaceReg, 'ㄱㅏㄴㅏㄷㅏ');
+var result = text.replace(replaceReg, '가나다');
 console.log(result);
