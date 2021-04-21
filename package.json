@@ -1,5 +1,5 @@
 {
-  "name": "start-fe",
+  "name": "star-fe",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d0orHyeok/start-fe.git"
+    "url": "git+https://github.com/jjuny4720/star-fe.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/d0orHyeok/start-fe/issues"
+    "url": "https://github.com/jjuny4720/star-fe/issues"
   },
-  "homepage": "https://github.com/d0orHyeok/start-fe#readme"
+  "homepage": "https://github.com/jjuny4720/star-fe#readme"
 }
