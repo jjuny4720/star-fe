@@ -13,7 +13,7 @@ const fetchUrl = () =>
 
   if (!url.trim()) 
   {
-    alert('url을 입력하시오');
+    alert('url을 입력해주세요');
     $url.value = '';
   } 
     else 
